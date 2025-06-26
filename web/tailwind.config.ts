@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         baloo: ["var(--font-baloo-2)"],
-        elmessiri: ["var(--font-el-messiri)"],
+        elmessiri: ["var(--font-elmessiri)"],
       },
       colors: {
         primary: {
