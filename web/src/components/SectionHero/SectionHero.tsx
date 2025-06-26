@@ -1,5 +1,5 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
 interface ISectionHero {
   className?: string;
@@ -7,9 +7,8 @@ interface ISectionHero {
 
 export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
   return (
-    <div className={clsx('border border-black p-4', className)}>
+    <div className={clsx("w-full border border-black p-4", className)}>
       {/* SectionHero content goes here */}
     </div>
   );
 };
-

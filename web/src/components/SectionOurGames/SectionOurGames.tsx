@@ -7,7 +7,7 @@ interface ISectionOurGames {
 
 export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
   return (
-    <div className={clsx('border border-black p-4', className)}>
+    <div className={clsx('w-full border border-black p-4', className)}>
       {/* SectionOurGames content goes here */}
     </div>
   );

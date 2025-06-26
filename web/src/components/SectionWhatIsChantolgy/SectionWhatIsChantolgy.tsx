@@ -7,7 +7,7 @@ interface ISectionWhatIsChantolgy {
 
 export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({ className }) => {
   return (
-    <div className={clsx('border border-black p-4', className)}>
+    <div className={clsx('w-full border border-black p-4', className)}>
       {/* SectionWhatIsChantolgy content goes here */}
     </div>
   );

@@ -7,7 +7,7 @@ interface ISectionComingSoon {
 
 export const SectionComingSoon: React.FC<ISectionComingSoon> = ({ className }) => {
   return (
-    <div className={clsx('border border-black p-4', className)}>
+    <div className={clsx('w-full border border-black p-4', className)}>
       {/* SectionComingSoon content goes here */}
     </div>
   );
