@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { baloo2, signika } from "@/fonts";
+import { El_Messiri, Geist, Geist_Mono } from "next/font/google";
+import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,21 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+export const baloo2 = Baloo_2({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  variable: "--font-baloo-2",
+});
+
+// El Messiri
+export const elmessiri = El_Messiri({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  variable: "--font-el-messiri",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${signika.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} ${elmessiri.variable} antialiased`}
       >
         {children}
       </body>
