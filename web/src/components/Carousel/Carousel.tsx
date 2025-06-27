@@ -32,7 +32,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         className || ""
       )}
     >
-      <div className="flex flex-row items-start justify-center lg:justify-center space-x-4 px-4 pb-4 mt-8">
+      <div className="flex flex-row items-start justify-start lg:justify-center space-x-4 px-4 pb-4 mt-8">
         {items.map((item, index) => {
           const imageSrc = item.image || (isMobile ? item.mobile : item.desktop);
 
