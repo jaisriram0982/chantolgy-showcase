@@ -69,3 +69,13 @@ body {
   font-feature-settings: "dlig" on;
   line-height: 21px;
 }
+
+.text-feature-description {
+  color: #A6A3B2;
+  font-feature-settings: "dlig" on;
+  font-family: var(--font-baloo-2);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}

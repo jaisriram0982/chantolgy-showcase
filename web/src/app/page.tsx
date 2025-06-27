@@ -8,7 +8,7 @@ import { SectionFooter } from "@/components/SectionFooter/SectionFooter";
 
 export default function DraftPage() {
   return (
-    <div className="relative h-screen bg-black">
+    <div className="relative bg-[rgba(12,10,15,1)]">
       <NavBar className="fixed top-0 left-0 right-0 z-50 w-full" />
       <div
         id="sections-container"
@@ -16,7 +16,7 @@ export default function DraftPage() {
       >
         <SectionHero />
         <SectionWhatIsChantolgy />
-        {/* <SectionWhyChantingGames /> */}
+        <SectionWhyChantingGames />
         <SectionOurGames />
         <SectionComingSoon />
         <SectionFooter />

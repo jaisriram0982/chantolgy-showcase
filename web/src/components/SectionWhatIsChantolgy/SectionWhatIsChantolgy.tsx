@@ -26,8 +26,6 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         classNameLine3="text-left lg:text-center lg:w-[80%]"
         showUnderline={true}
       />
-
-      {/* Carousel Component */}
       <Carousel />
     </div>
   );
