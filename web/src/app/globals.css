@@ -40,7 +40,7 @@ body {
 }
 
 .text-style3-orange {
-  @apply text-4xl font-normal leading-7;
+  @apply text-3xl lg:text-4xl font-normal lg:leading-7;
   color: #EE693A;
   font-family: var(--font-elmessiri);
   font-feature-settings: "dlig" on;
