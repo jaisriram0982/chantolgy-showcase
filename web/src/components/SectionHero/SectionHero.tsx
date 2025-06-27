@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
 import { useUtilities } from "@/hooks/useUtilities";
 import { gsap } from "gsap";
+import { TypingEffect } from "@/components/TypingEffect/TypingEffect";
 
 interface ISectionHero {
   className?: string;
@@ -90,7 +91,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
     <div
       ref={sectionRef}
       className={clsx(
-        "w-full min-h-screen bg-cover bg-center bg-no-repeat border-black p-4 flex flex-col items-center justify-center",
+        "w-full min-h-screen bg-cover bg-center bg-no-repeat border-black p-4 flex flex-col items-center",
         className
       )}
       style={{
@@ -100,7 +101,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
     >
       <div
         id="text-block-1"
-        className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center px-4"
+        className="w-full max-w-4xl mx-auto flex flex-col items-center text-center px-4 mt-32 md:mt-40"
       >
         <h1 ref={titleRef} className="text-style1-white mb-4">
           Welcome to
@@ -114,6 +115,15 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         <h3 ref={taglineRef} className="text-style1-white mb-8">
           Play. Connect. Chant.
         </h3>
+        
+        {/* Typing Effect */}
+        <div ref={typingRef} className="mt-6">
+          <TypingEffect
+            className="text-style2-white"
+            startDelay={0} // No delay since it's controlled by GSAP
+            pauseDuration={2500}
+          />
+        </div>
       </div>
     </div>
   );

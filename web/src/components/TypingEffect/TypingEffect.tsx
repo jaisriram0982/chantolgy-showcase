@@ -1,7 +1,7 @@
 "use client";
 
-import { FC } from "react";
-import TypeIt from "typeit-react";
+import { FC, useEffect, useRef } from "react";
+import Typed from "typed.js";
 import clsx from "clsx";
 
 interface ITypingEffectProps {
@@ -14,37 +14,48 @@ interface ITypingEffectProps {
 export const TypingEffect: FC<ITypingEffectProps> = ({
   className,
   containerClassName,
-  startDelay = 2000,
+  startDelay = 0,
   pauseDuration = 2500,
 }) => {
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const typedRef = useRef<Typed | null>(null);
+
   // Array of sentences for the typing animation - Chantolgy themed
   const typeAnimationTexts = [
     "Find peace in the rhythm of ancient mantras.",
-    "Connect with friends through mindful breathing games.",
+    "Connect through mindful breathing games.",
     "Transform your daily routine with meditative play.",
     "Experience the power of chanting in interactive form.",
-    "Discover calm in the chaos through gaming."
+    "Discover calm in the chaos through gaming.",
   ];
+
+  useEffect(() => {
+    if (!elementRef.current) return;
+
+    // Initialize Typed.js
+    typedRef.current = new Typed(elementRef.current, {
+      strings: typeAnimationTexts,
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: pauseDuration,
+      startDelay: startDelay,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
+      smartBackspace: true, // Only backspace what doesn't match the previous string
+    });
+
+    // Cleanup function
+    return () => {
+      if (typedRef.current) {
+        typedRef.current.destroy();
+      }
+    };
+  }, [typeAnimationTexts, pauseDuration, startDelay]);
 
   return (
     <div className={clsx("min-h-[60px] w-full", containerClassName)}>
-      <TypeIt
-        className={className}
-        options={{
-          strings: typeAnimationTexts,
-          speed: 45,
-          waitUntilVisible: true,
-          cursor: true,
-          lifeLike: true,
-          loop: true,
-          loopDelay: 1000,
-          startDelay: startDelay,
-          cursorChar: "|",
-          deleteSpeed: 30,
-          breakLines: false,
-        }}
-      />
+      <span ref={elementRef} className={className}></span>
     </div>
   );
 };
-
