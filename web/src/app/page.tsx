@@ -7,11 +7,13 @@ import { SectionWhyChantingGames } from "@/components/SectionWhyChantingGames/Se
 import { SectionOurGames } from "@/components/SectionOurGames/SectionOurGames";
 import { SectionComingSoon } from "@/components/SectionComingSoon/SectionComingSoon";
 import { SectionFooter } from "@/components/SectionFooter/SectionFooter";
+import { Loader } from "@/components/Loader/Loader";
 import { useUtilities } from "@/hooks/useUtilities";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const { playMusic } = useUtilities();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Attempt to play music when component mounts
@@ -35,6 +37,15 @@ export default function Home() {
       document.removeEventListener('keydown', handleUserInteraction);
     };
   }, [playMusic]);
+
+  const handleLoaderComplete = () => {
+    setIsLoading(false);
+  };
+
+  // Show loader while loading
+  if (isLoading) {
+    return <Loader onComplete={handleLoaderComplete} />;
+  }
 
   return (
     <div className="relative bg-[rgba(20,18,23,1)]">

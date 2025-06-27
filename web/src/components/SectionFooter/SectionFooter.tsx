@@ -1,7 +1,9 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useUtilities } from '@/hooks/useUtilities';
+import { ContactModal } from '@/components/ContactModal/ContactModal';
 
 interface ISectionFooter {
   className?: string;
@@ -9,35 +11,54 @@ interface ISectionFooter {
 
 export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
   const currentYear = new Date().getFullYear();
+  const { scrollToElementById } = useUtilities();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleNavigation = (type: string) => {
+    switch (type) {
+      case 'about':
+        scrollToElementById('why-chanting-in-games');
+        break;
+      case 'contact':
+        setIsContactModalOpen(true);
+        break;
+      case 'careers':
+        // You can add careers section navigation here when available
+        console.log('Careers section - to be implemented');
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <div className={clsx('w-full p-4', className)}>
       <div className="flex flex-col items-center justify-center space-y-8 py-8">
         {/* First Row - Navigation Links */}
         <div className="flex flex-row space-x-8">
-          <Link 
-            href="/about" 
-            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300"
+          <button 
+            onClick={() => handleNavigation('about')}
+            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
           >
             About
-          </Link>
-          <Link 
-            href="/contact" 
-            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300"
+          </button>
+          <button 
+            onClick={() => handleNavigation('contact')}
+            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
           >
             Contact
-          </Link>
-          <Link 
-            href="/careers" 
-            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300"
+          </button>
+          {/* <button 
+            onClick={() => handleNavigation('careers')}
+            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
           >
             Careers
-          </Link>
+          </button> */}
         </div>
 
         {/* Second Row - LinkedIn Logo */}
         <div className="flex justify-center">
-          <Link href="#" className="hover:opacity-80 transition-opacity duration-300">
+          <button className="hover:opacity-80 transition-opacity duration-300">
             <Image
               src="/navbar/linkedin.png"
               alt="LinkedIn"
@@ -45,7 +66,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
               height={32}
               className="w-8 h-8"
             />
-          </Link>
+          </button>
         </div>
 
         {/* Third Row - Copyright */}
@@ -55,6 +76,12 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
           </p>
         </div>
       </div>
+      
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   );
 };
