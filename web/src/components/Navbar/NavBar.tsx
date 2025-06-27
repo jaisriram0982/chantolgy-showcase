@@ -61,7 +61,7 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
   return (
     <div
       className={clsx(
-        "w-full flex justify-between items-center bg-black text-white font-baloo",
+        "w-full flex justify-between items-center bg-[rgba(12,10,15,1)] text-white font-baloo",
         className,
         isMobile ? "px-4 pt-4 pb-2" : "px-16 py-4"
       )}
@@ -95,18 +95,79 @@ const MobileMenu = () => {
 
       {/* Full Page Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black z-50 flex flex-col pt-20 px-6">
-          <div className="flex flex-col gap-8 items-start">
-            {NAVBAR_ITEMS.map((item) => (
-              <Link
-                key={item.name}
-                href={item.navigateToPage}
-                className="text-xl font-medium text-white hover:text-[#FF6B00] transition-colors duration-300 font-baloo"
+        <div className="fixed inset-0 bg-[rgba(12,10,15,1)] z-50 flex flex-col px-6">
+          <div className="relative w-full h-screen">
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ top: "20%" }}
+            >
+              <Image
+                src="/common/mandela.png"
+                alt="mandela background"
+                width={300}
+                height={300}
+                className="w-full h-auto opacity-20 object-contain border"
+              />
+            </div>
+            {/* Header with Logo and Close Button */}
+            <div className="flex justify-between items-center pt-4 pb-8">
+              {/* Logo */}
+              <div id="modal-logo">
+                <Image
+                  src="/common/logo-v1.png"
+                  alt="logo"
+                  width={50}
+                  height={50}
+                />
+              </div>
+
+              {/* Close Button */}
+              <button
                 onClick={toggleMenu}
+                className="w-8 h-8 border border-gray-400 rounded flex items-center justify-center hover:bg-gray-800 transition-colors duration-200"
               >
-                {item.name}
-              </Link>
-            ))}
+                <svg
+                  className="w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-8 items-start flex-1">
+              {NAVBAR_ITEMS.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.navigateToPage}
+                  className="text-xl font-medium text-white hover:text-[#FF6B00] transition-colors duration-300 font-baloo"
+                  onClick={toggleMenu}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* LinkedIn Logo at Bottom */}
+            <div className="absolute bottom-4 flex justify-center">
+              <div id="linkedin-icon-mobile" className="w-8 h-8">
+                <Image
+                  src="/navbar/linkedin.png"
+                  alt="linkedin-icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
