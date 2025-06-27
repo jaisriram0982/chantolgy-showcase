@@ -60,7 +60,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
         <div className="flex justify-center">
           <button className="hover:opacity-80 transition-opacity duration-300">
             <Image
-              src="/navbar/linkedin.png"
+              src="/common/linkedin.png"
               alt="LinkedIn"
               width={32}
               height={32}

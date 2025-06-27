@@ -68,7 +68,7 @@ export const SectionWhyChantingGames: React.FC<ISectionWhyChantingGames> = ({
           {/* Quick sessions, lasting impact */}
           <div className="flex flex-col items-center text-center">
             <Image
-              src="/sections/whychantingingames/clock.png"
+              src="/sections/why-chanting-in-games/clock.png"
               alt="Quick sessions icon"
               width={30}
               height={30}
@@ -82,7 +82,7 @@ export const SectionWhyChantingGames: React.FC<ISectionWhyChantingGames> = ({
           {/* Simple mechanics, deep meaning */}
           <div className="flex flex-col items-center text-center">
             <Image
-              src="/sections/whychantingingames/arrow.png"
+              src="/sections/why-chanting-in-games/arrow.png"
               alt="Simple mechanics icon"
               width={30}
               height={30}
@@ -96,7 +96,7 @@ export const SectionWhyChantingGames: React.FC<ISectionWhyChantingGames> = ({
           {/* Safe for all ages - This will be in second row on mobile */}
           <div className="flex flex-col items-center text-center md:col-span-1 col-span-1 md:justify-self-center">
             <Image
-              src="/sections/whychantingingames/age-group.png"
+              src="/sections/why-chanting-in-games/age-group.png"
               alt="Safe for all ages icon"
               width={30}
               height={30}

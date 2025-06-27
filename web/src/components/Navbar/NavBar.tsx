@@ -51,7 +51,7 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
       ))}
       <div id="linkedin-icon" className="ml-4 w-6 h-6">
         <Image
-          src="/navbar/linkedin.png"
+          src="/common/linkedin.png"
           alt="linkedin-icon"
           width={24}
           height={24}
@@ -180,7 +180,7 @@ const MobileMenu = () => {
             <div className="absolute bottom-4 flex justify-center">
               <div id="linkedin-icon-mobile" className="w-8 h-8">
                 <Image
-                  src="/navbar/linkedin.png"
+                  src="/common/linkedin.png"
                   alt="linkedin-icon"
                   width={32}
                   height={32}
