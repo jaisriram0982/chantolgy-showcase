@@ -28,19 +28,19 @@ body {
 
 /* Custom text styles */
 .text-style1-white {
-  @apply text-white text-center text-base font-normal leading-6;
+  @apply text-white  text-base font-normal leading-6;
   font-family: var(--font-baloo-2);
   font-feature-settings: "dlig" on;
 }
 
 .text-style2-white {
-  @apply text-white text-center text-xl font-medium leading-7;
+  @apply text-white text-xl font-medium leading-7;
   font-family: var(--font-baloo-2);
   font-feature-settings: "dlig" on;
 }
 
 .text-style3-orange {
-  @apply text-center text-4xl font-normal leading-7;
+  @apply text-4xl font-normal leading-7;
   color: #EE693A;
   font-family: var(--font-elmessiri);
   font-feature-settings: "dlig" on;

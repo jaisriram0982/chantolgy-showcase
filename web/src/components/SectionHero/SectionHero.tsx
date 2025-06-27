@@ -18,14 +18,11 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
   return (
     <div
       className={clsx(
-        "w-full h-screen bg-cover bg-center bg-no-repeat border-black p-4 flex flex-col items-center justify-start",
+        "w-full  min-h-screen bg-cover bg-center bg-no-repeat border-black p-4 flex flex-col items-center justify-start",
         className
       )}
       style={{
         backgroundImage: `url('${backgroundImage}')`,
-        // width 80%
-        // width: "80%",
-        scale: isMobile ? 1 : 1.25,
         margin: "0 auto",
       }}
     >
