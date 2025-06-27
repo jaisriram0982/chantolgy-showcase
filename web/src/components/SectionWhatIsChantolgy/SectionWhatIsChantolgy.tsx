@@ -24,7 +24,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
           id="what-is-n-its-underline"
           className="flex lg:flex-col gap-x-2 items-center justify-center"
         >
-          <p className="text-style2-white text-left lg:text-center w-1/2">
+          <p className="text-style2-white text-left lg:text-center text-nowrap">
             What is Chantolgy?
           </p>
           <div
