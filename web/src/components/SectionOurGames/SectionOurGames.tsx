@@ -55,6 +55,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
         id="fg-ervwojn"
         className="w-full h-full flex flex-col items-center justify-start"
       >
+        {/* Main texts */}
         <div
           id="main-texts"
           className="mb-4 flex flex-col items-start justify-center"
@@ -79,12 +80,15 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
         {/* icons carousel */}
         <div
           id="icons-carousel"
-          className="mt-20 w-[80%] grid grid-cols-2 lg:grid-cols-3 items-center justify-start gap-4"
+          className="mt-20 w-[80%] grid grid-cols-2 lg:grid-cols-3 items-center gap-4"
         >
-          {ICONS_CAROUSEL_ITEMS.map((item) => (
+          {ICONS_CAROUSEL_ITEMS.map((item, index) => (
             <div
               key={item.title}
-              className="flex flex-col items-center justify-start h-full"
+              className={`flex px-8 lg:px-4 py-1 flex-col items-center justify-start h-full ${
+                // Center the third item (index 2) on mobile by spanning both columns
+                index === 2 ? "col-span-2 lg:col-span-1" : ""
+              }`}
             >
               <Image
                 src={item.logo}
@@ -99,10 +103,10 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
             </div>
           ))}
         </div>
-        
+
         {/* Games Carousel */}
-        <div className="mt-16 w-[95%]">
-          <Carousel items={GAMES_CAROUSEL_ITEMS} className="justify-center" imageSize={223} />
+        <div className="mt-16 w-full lg:w-[80%] ">
+          <Carousel items={GAMES_CAROUSEL_ITEMS} imageSize={223} />
         </div>
       </div>
     </div>
