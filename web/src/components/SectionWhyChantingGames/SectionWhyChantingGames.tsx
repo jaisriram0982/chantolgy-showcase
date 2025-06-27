@@ -17,7 +17,7 @@ export const SectionWhyChantingGames: React.FC<ISectionWhyChantingGames> = ({
   return (
     <div
       className={clsx(
-        "w-full min-h-screen flex flex-col items-center justify-center",
+        "mt-10 w-full flex flex-col items-center justify-center",
         className
       )}
       id="why-chanting-in-games"

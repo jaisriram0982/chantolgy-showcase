@@ -37,7 +37,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
   return (
     <div
       className={clsx(
-        "w-full min-h-screen flex flex-col items-center justify-start",
+        "w-full flex flex-col items-center justify-start",
         className
       )}
     >

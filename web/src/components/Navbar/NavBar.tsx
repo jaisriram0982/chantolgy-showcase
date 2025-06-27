@@ -18,11 +18,6 @@ const NAVBAR_ITEMS = [
     scrollToId: "#our-games",
   },
   {
-    name: "About",
-    navigateToPage: "about",
-    scrollToId: "#about",
-  },
-  {
     name: "Contact Us",
     navigateToPage: "contact-us",
     scrollToId: "#contact-us",
