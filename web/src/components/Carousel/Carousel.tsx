@@ -7,7 +7,7 @@ import React from "react";
 export interface CarouselItemConfig {
   desktop?: string;
   mobile?: string;
-  image?: string; // For cases where same image is used for both desktop and mobile
+  image?: string;
   title: string;
   description: string;
 }
@@ -15,7 +15,7 @@ export interface CarouselItemConfig {
 interface CarouselProps {
   items: CarouselItemConfig[];
   className?: string;
-  imageSize?: number; // Size for both width and height of images
+  imageSize?: number;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
@@ -28,48 +28,52 @@ export const Carousel: React.FC<CarouselProps> = ({
   return (
     <div
       className={clsx(
-        "flex flex-row items-start justify-center space-x-2 mt-8 overflow-x-scroll max-w-[100%] overflow-y-hidden px-4 pb-4",
+        "w-full overflow-x-auto",
         className || ""
       )}
     >
-      {items.map((item, index) => {
-        // Determine the image source - use image if provided, otherwise fallback to desktop/mobile
-        const imageSrc = item.image || (isMobile ? item.mobile : item.desktop);
+      <div className="flex flex-row items-start justify-center lg:justify-center space-x-4 px-4 pb-4 mt-8">
+        {items.map((item, index) => {
+          const imageSrc = item.image || (isMobile ? item.mobile : item.desktop);
 
-        return (
-          <div
-            key={index}
-            className="flex flex-col items-center flex-shrinkk w-60 md:w-90"
-          >
-            <Image
-              src={imageSrc || ""}
-              alt={item.title}
-              className={clsx(
-                `w-[${imageSize}px] h-[${imageSize}px] rounded-2xl border`
-              )}
-              width={imageSize}
-              height={imageSize}
-            />
-            <p
-              className={clsx(
-                `mt-4 text-carousel-title text-left w-[${imageSize}px]`
-              )}
+          return (
+            <div
+              key={index}
+              className="flex flex-col items-center flex-shrink-0"
+              style={{ width: `${imageSize}px` }}
             >
-              {item.title}
-            </p>
-            <p
-              className={clsx(
-                `mt-2 text-carousel-desc text-left w-[${imageSize}px]`
-              )}
-              style={{
-                width: `${imageSize}px`,
-              }}
-            >
-              {item.description}
-            </p>
-          </div>
-        );
-      })}
+              <Image
+                src={imageSrc || ""}
+                alt={item.title}
+                className="rounded-2xl border"
+                width={imageSize}
+                height={imageSize}
+                style={{
+                  width: `${imageSize}px`,
+                  height: `${imageSize}px`,
+                }}
+              />
+              <p
+                className="mt-4 text-carousel-title text-left"
+                style={{
+                  width: `${imageSize}px`,
+                }}
+              >
+                {item.title}
+              </p>
+              <p
+                className="mt-2 text-carousel-desc text-left"
+                style={{
+                  width: `${imageSize}px`,
+                  wordWrap: "break-word",
+                }}
+              >
+                {item.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -13,9 +13,10 @@ interface ILoader {
 export const Loader: React.FC<ILoader> = ({ onComplete, className }) => {
   const loaderRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!loaderRef.current || !logoRef.current) return;
+    if (!loaderRef.current || !logoRef.current || !progressBarRef.current) return;
 
     // Create GSAP timeline
     const tl = gsap.timeline({
@@ -30,34 +31,29 @@ export const Loader: React.FC<ILoader> = ({ onComplete, className }) => {
       }
     });
 
-    // Initial setup - logo starts at full size, slightly transparent
+    // Initial setup - logo starts transparent, progress bar starts at 0 width
     gsap.set(logoRef.current, {
-      scale: 1,
-      opacity: 0.3
+      opacity: 0
+    });
+    gsap.set(progressBarRef.current, {
+      scaleX: 0,
+      transformOrigin: "left center"
     });
 
     // Animation sequence
     tl
-      // Quick fade in to full opacity
+      // Wait 0.3 seconds, then fade in logo
       .to(logoRef.current, {
         opacity: 1,
         duration: 0.4,
         ease: "power2.out"
-      })
-      // Elegant opacity pulsing animation (shorter duration)
-      .to(logoRef.current, {
-        opacity: 0.7,
-        duration: 0.6,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: 3, // Fewer pulses for shorter duration
-      })
-      // Brief pause at full opacity before loader fades
-      .to(logoRef.current, {
-        opacity: 1,
-        duration: 0.2,
-        ease: "power2.out"
-      });
+      }, 0.3)
+      // Start progress bar animation after logo is visible
+      .to(progressBarRef.current, {
+        scaleX: 1,
+        duration: 1.8,
+        ease: "power3.out" // Non-linear, exciting easing
+      }, "-=0.2"); // Start slightly before logo fade is complete
 
     // Cleanup function
     return () => {
@@ -69,17 +65,16 @@ export const Loader: React.FC<ILoader> = ({ onComplete, className }) => {
     <div
       ref={loaderRef}
       className={clsx(
-        "fixed inset-0 z-[9999] flex items-center justify-center",
+        "fixed inset-0 z-[9999] flex flex-col items-center justify-center",
         "bg-[rgba(20,18,23,1)]", // Your website's main background color
         className
       )}
     >
-      {/* Loader content */}
+      {/* Logo */}
       <div
         ref={logoRef}
-        className="flex flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center mb-8"
       >
-        {/* Chantolgy Logo */}
         <Image
           src="/common/logo-with-text-v1.png"
           alt="Chantolgy Studios"
@@ -87,6 +82,14 @@ export const Loader: React.FC<ILoader> = ({ onComplete, className }) => {
           height={120}
           className="drop-shadow-2xl"
           priority
+        />
+      </div>
+      
+      {/* Progress Bar Container */}
+      <div className="w-full max-w-[150px] md:max-w-[150px] h-1 bg-gray-800 rounded-full overflow-hidden">
+        <div
+          ref={progressBarRef}
+          className="h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
         />
       </div>
     </div>

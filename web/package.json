@@ -14,7 +14,8 @@
     "gsap": "^3.13.0",
     "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "typeit-react": "^2.7.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

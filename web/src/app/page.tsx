@@ -20,21 +20,21 @@ export default function Home() {
     const handleUserInteraction = () => {
       playMusic();
       // Remove event listeners after first interaction
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-      document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener("click", handleUserInteraction);
+      document.removeEventListener("touchstart", handleUserInteraction);
+      document.removeEventListener("keydown", handleUserInteraction);
     };
 
     // Add event listeners for user interaction
-    document.addEventListener('click', handleUserInteraction);
-    document.addEventListener('touchstart', handleUserInteraction);
-    document.addEventListener('keydown', handleUserInteraction);
+    document.addEventListener("click", handleUserInteraction);
+    document.addEventListener("touchstart", handleUserInteraction);
+    document.addEventListener("keydown", handleUserInteraction);
 
     // Cleanup
     return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-      document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener("click", handleUserInteraction);
+      document.removeEventListener("touchstart", handleUserInteraction);
+      document.removeEventListener("keydown", handleUserInteraction);
     };
   }, [playMusic]);
 
@@ -42,13 +42,11 @@ export default function Home() {
     setIsLoading(false);
   };
 
-  // Show loader while loading
-  if (isLoading) {
-    return <Loader onComplete={handleLoaderComplete} />;
-  }
-
   return (
     <div className="relative bg-[rgba(20,18,23,1)]">
+      <div style={{ display: isLoading ? "block" : "none" }} className="absolute inset-0 h-screen">
+        <Loader onComplete={handleLoaderComplete} />;
+      </div>
       <NavBar className="fixed top-0 left-0 right-0 z-50 w-full" />
       <div
         id="sections-container"
