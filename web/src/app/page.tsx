@@ -6,9 +6,9 @@ import { SectionOurGames } from "@/components/SectionOurGames/SectionOurGames";
 import { SectionComingSoon } from "@/components/SectionComingSoon/SectionComingSoon";
 import { SectionFooter } from "@/components/SectionFooter/SectionFooter";
 
-export default function App() {
+export default function Home() {
   return (
-    <div className="relative bg-[rgba(12,10,15,1)]">
+    <div className="relative bg-[rgba(20,18,23,1)]">
       <NavBar className="fixed top-0 left-0 right-0 z-50 w-full" />
       <div
         id="sections-container"

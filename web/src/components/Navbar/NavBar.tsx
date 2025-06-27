@@ -61,7 +61,7 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
   return (
     <div
       className={clsx(
-        "w-full flex justify-between items-center bg-[rgba(12,10,15,1)] text-white font-baloo",
+        "w-full flex justify-between items-center bg-[rgba(12,10,15,1)]-d bg-[rgba(20,18,23,0.95)] text-white font-baloo",
         className,
         isMobile ? "px-4 pt-4 pb-2" : "px-16 py-4"
       )}
@@ -95,7 +95,7 @@ const MobileMenu = () => {
 
       {/* Full Page Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-[rgba(12,10,15,1)] z-50 flex flex-col px-6">
+        <div className="fixed inset-0 bg-[rgba(12,10,15,1)]-d bg-[rgba(20,18,23,1)] z-50 flex flex-col px-6">
           <div className="relative w-full h-screen">
             {/* Background Image */}
             <div
