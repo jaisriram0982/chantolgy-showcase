@@ -24,7 +24,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
       style={{
         backgroundImage: `url('${backgroundImage}')`,
         // width 80%
-        width: "80%",
+        // width: "80%",
         margin: "0 auto",
       }}
     >
