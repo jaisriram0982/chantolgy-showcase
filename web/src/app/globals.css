@@ -25,3 +25,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom text styles */
+.text-style1-white {
+  @apply text-white text-center text-base font-normal leading-6;
+  font-family: var(--font-baloo-2);
+  font-feature-settings: "dlig" on;
+}
+
+.text-style2-white {
+  @apply text-white text-center text-xl font-medium leading-7;
+  font-family: var(--font-baloo-2);
+  font-feature-settings: "dlig" on;
+}
+
+.text-style3-orange {
+  @apply text-center text-4xl font-normal leading-7;
+  color: #EE693A;
+  font-family: var(--font-elmessiri);
+  font-feature-settings: "dlig" on;
+}
+
+.text-heading-main {
+  @apply text-white text-4xl font-bold leading-tight md:text-6xl md:font-bold;
+  font-family: var(--font-baloo-2);
+}
+
+.text-tagline {
+  @apply text-white text-2xl font-semibold leading-relaxed md:text-3xl md:font-semibold;
+  font-family: var(--font-baloo-2);
+}
+
+.text-carousel-title {
+  @apply text-white text-base font-semibold leading-6;
+  font-family: var(--font-baloo-2);
+}
+
+.text-carousel-desc {
+  @apply text-sm font-normal;
+  color: #A6A3B2;
+  font-family: var(--font-baloo-2);
+  font-feature-settings: "dlig" on;
+  line-height: 21px;
+}

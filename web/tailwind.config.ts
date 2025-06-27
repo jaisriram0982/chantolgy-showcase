@@ -26,46 +26,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    function ({ addComponents }: any) {
-      const components = {
-        // Style 1 white text - composed of Tailwind classes
-        ".text-style1-white": {
-          "@apply text-white text-center font-baloo text-base font-normal leading-6 md:text-base md:font-normal":
-            {},
-        },
-        // Main heading style - composed of Tailwind classes
-        ".text-heading-main": {
-          "@apply text-white text-center font-baloo text-4xl font-bold leading-tight md:text-6xl md:font-bold":
-            {},
-        },
-        // Tagline style - composed of Tailwind classes
-        ".text-tagline": {
-          "@apply text-white text-center font-baloo text-2xl font-semibold leading-relaxed md:text-3xl md:font-semibold":
-            {},
-        },
-        // Body text style - composed of Tailwind classes
-        ".text-body": {
-          "@apply text-base font-normal leading-normal": {},
-        },
-        // Small text style - composed of Tailwind classes
-        ".text-small": {
-          "@apply text-sm font-normal leading-tight": {},
-        },
-        // Style 2 white text - for section subheadings like "What is Chantolgy?"
-        ".text-style2-white": {
-          "@apply text-white text-center font-baloo text-xl font-medium leading-7":
-            {},
-        },
-        // Style 3 orange text - for main headings like "Chantolgy Studios is Reimagining Casual Games"
-        ".text-style3-orange": {
-          "@apply text-orange-500 text-center font-elmessiri text-4xl font-normal leading-7":
-            {},
-        },
-      };
-      addComponents(components);
-    },
-  ],
+  plugins: [],
 };
 
 export default config;

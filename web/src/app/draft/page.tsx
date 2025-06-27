@@ -10,7 +10,7 @@ export default function DraftPage() {
   return (
     <div className="flex flex-col items-center justify-start h-screen bg-black">
       <NavBar className="fixed top-0 left-0 right-0 z-50 w-full" />
-      <div id="sections-container" className="mt-21 w-full flex flex-col">
+      <div id="sections-container" className="mt-21 w-full lg:max-w-[80%] mx-auto flex flex-col">
         <SectionHero />
         <SectionWhatIsChantolgy />
         <SectionWhyChantingGames />
