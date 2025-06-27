@@ -47,6 +47,14 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
           {item.name}
         </Link>
       ))}
+      <div id="linkedin-icon" className="ml-4 w-6 h-6">
+        <Image
+          src="/navbar/linkedin.png"
+          alt="linkedin-icon"
+          width={24}
+          height={24}
+        />
+      </div>
     </div>
   );
 
