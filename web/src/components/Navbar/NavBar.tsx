@@ -49,14 +49,19 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
           {item.name}
         </button>
       ))}
-      <div id="linkedin-icon" className="ml-4 w-6 h-6">
+      <a 
+        href="https://www.linkedin.com/company/chantolgy-studios" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="ml-4 w-6 h-6 hover:opacity-80 transition-opacity duration-300"
+      >
         <Image
           src="/common/linkedin.png"
           alt="linkedin-icon"
           width={24}
           height={24}
         />
-      </div>
+      </a>
     </div>
   );
 
@@ -176,16 +181,23 @@ const MobileMenu = () => {
               ))}
             </div>
 
-            {/* LinkedIn Logo at Bottom */}
-            <div className="absolute bottom-4 flex justify-center">
-              <div id="linkedin-icon-mobile" className="w-8 h-8">
-                <Image
-                  src="/common/linkedin.png"
-                  alt="linkedin-icon"
-                  width={32}
-                  height={32}
-                />
-              </div>
+            {/* LinkedIn Logo at Bottom Right */}
+            <div className="absolute bottom-4 right-4">
+              <a 
+                href="https://www.linkedin.com/company/chantolgy-studios" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block hover:opacity-80 transition-opacity duration-300"
+              >
+                <div id="linkedin-icon-mobile" className="w-8 h-8">
+                  <Image
+                    src="/common/linkedin.png"
+                    alt="linkedin-icon"
+                    width={32}
+                    height={32}
+                  />
+                </div>
+              </a>
             </div>
           </div>
           

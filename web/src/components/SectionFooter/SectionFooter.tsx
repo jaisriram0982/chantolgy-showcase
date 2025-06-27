@@ -58,7 +58,12 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
 
         {/* Second Row - LinkedIn Logo */}
         <div className="flex justify-center">
-          <button className="hover:opacity-80 transition-opacity duration-300">
+          <a 
+            href="https://www.linkedin.com/company/chantolgy-studios" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity duration-300"
+          >
             <Image
               src="/common/linkedin.png"
               alt="LinkedIn"
@@ -66,7 +71,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
               height={32}
               className="w-8 h-8"
             />
-          </button>
+          </a>
         </div>
 
         {/* Third Row - Copyright */}
