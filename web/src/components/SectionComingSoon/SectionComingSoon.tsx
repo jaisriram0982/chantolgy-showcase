@@ -120,6 +120,23 @@ export const SectionComingSoon: React.FC<ISectionComingSoon> = ({
             to everyone.
           </p>
         </div>
+        
+        {/* New Contact Us Section */}
+        <div
+          id="contact-us-section"
+          className="pt-16 w-full flex flex-col items-center justify-center"
+        >
+          <p className="text-[rgba(238,105,58,1)]  text-xl font-medium font-baloo leading-7 text-center">
+            Mindful Games for the Messaging Generation.
+          </p>
+          
+          {/* Orange underline */}
+          <div className="lg:mt-4 mt-2 relative w-[175px] mx-auto bg-[rgba(238,105,58,1)] h-[2px] rounded-full">
+            <div className="absolute top-0 inset-x-0 w-full h-[8px] rounded-full flex justify-start items-center">
+              <div className="bg-[rgba(238,105,58,1)] w-1/4 -mt-[6px] h-[6px] mx-auto rounded-full" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
