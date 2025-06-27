@@ -4,10 +4,11 @@ import clsx from "clsx";
 import { useUtilities } from "@/hooks/useUtilities";
 import Link from "next/link";
 import { useState } from "react";
+import { HamburgerButton } from "@/components/HamburgerButton/HamburgerButton";
 
 const NAVBAR_ITEMS = [
   {
-    name: "about-chantolgy",
+    name: "About  Chantolgy",
     navigateToPage: "/about-chantolgy",
     scrollToId: "#about-chantolgy",
   },
@@ -17,12 +18,12 @@ const NAVBAR_ITEMS = [
     scrollToId: "#our-games",
   },
   {
-    name: "about",
+    name: "About",
     navigateToPage: "about",
     scrollToId: "#about",
   },
   {
-    name: "contact-us",
+    name: "Contact Us",
     navigateToPage: "contact-us",
     scrollToId: "#contact-us",
   },
@@ -82,31 +83,7 @@ const MobileMenu = () => {
   return (
     <div className="relative">
       {/* Hamburger Button */}
-      <button
-        onClick={toggleMenu}
-        className="flex flex-col justify-center items-center gap-1.5 p-2"
-        aria-label="Toggle navigation menu"
-        aria-expanded={isOpen}
-      >
-        <span
-          className={clsx(
-            "block w-6 h-0.5 bg-white transition-transform duration-300",
-            isOpen && "translate-y-2 rotate-45"
-          )}
-        />
-        <span
-          className={clsx(
-            "block w-6 h-0.5 bg-white transition-opacity duration-300",
-            isOpen && "opacity-0"
-          )}
-        />
-        <span
-          className={clsx(
-            "block w-6 h-0.5 bg-[#171717] transition-transform duration-300",
-            isOpen && "-translate-y-2 -rotate-45"
-          )}
-        />
-      </button>
+      <HamburgerButton isOpen={isOpen} onClick={toggleMenu} />
 
       {/* Full Page Modal */}
       {isOpen && (

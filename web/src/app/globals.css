@@ -47,8 +47,9 @@ body {
 }
 
 .text-heading-main {
-  @apply text-white text-4xl font-bold leading-tight md:text-6xl md:font-bold;
-  font-family: var(--font-baloo-2);
+  @apply text-white font-bold leading-tight text-[48px];
+  font-family: var(--font-elmessiri);
+  font-feature-settings: "dlig" on;
 }
 
 .text-tagline {

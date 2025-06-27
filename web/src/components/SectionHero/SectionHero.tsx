@@ -25,18 +25,19 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         backgroundImage: `url('${backgroundImage}')`,
         // width 80%
         // width: "80%",
+        scale: isMobile ? 1 : 1.25,
         margin: "0 auto",
       }}
     >
       <div
         id="text-block-1"
-        className="mt-20 flex flex-col items-center justify-center"
+        className="lg:mt-48 mt-10 w-full flex flex-col items-center justify-center"
       >
-        <h1 className="text-style1-white font-baloo mb-4">Welcome to</h1>
-        <h2 className="text-heading-main text-[48px] mb-4">
+        <h1 className="text-style1-white">Welcome to</h1>
+        <h2 className="text-heading-main text-[48px] mb-2 text-nowrap">
           Chantolgy Studios
         </h2>
-        <h3 className="text-tagline">Play. Connect. Chant.</h3>
+        <h3 className="text-style1-white">Play. Connect. Chant.</h3>
       </div>
     </div>
   );
