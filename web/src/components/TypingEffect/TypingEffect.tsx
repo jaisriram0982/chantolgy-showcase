@@ -35,8 +35,8 @@ export const TypingEffect: FC<ITypingEffectProps> = ({
     // Initialize Typed.js
     typedRef.current = new Typed(elementRef.current, {
       strings: typeAnimationTexts,
-      typeSpeed: 50,
-      backSpeed: 30,
+      typeSpeed: 25,
+      backSpeed: 15,
       backDelay: pauseDuration,
       startDelay: startDelay,
       loop: true,
