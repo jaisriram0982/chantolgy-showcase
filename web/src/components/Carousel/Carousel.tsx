@@ -47,9 +47,9 @@ export const Carousel: React.FC = () => {
           <Image
             src={isMobile ? item.mobile : item.desktop}
             alt={item.title}
-            className="object-contain hidden md:block w-full h-auto"
-            width={isMobile ? 240 : 240}
-            height={isMobile ? 240 : 240}
+            className="object-contain w-full h-auto"
+            width={250}
+            height={250}
           />
           <p className="mt-4 text-carousel-title text-left w-full">{item.title}</p>
           <p className="mt-2 text-carousel-desc text-left">
