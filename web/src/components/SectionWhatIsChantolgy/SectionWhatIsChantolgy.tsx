@@ -12,7 +12,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
   return (
     <div
       className={clsx(
-        "lg:w-[90%] w-full border min-h-screen flex flex-col items-center justify-start",
+        "lg:w-[80%] w-full min-h-screen flex flex-col items-center justify-start",
         className
       )}
     >
@@ -20,8 +20,8 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         id="text-block-2"
         className="mt-16 flex flex-col items-center justify-center space-y-8"
       >
-        <p className="text-style1-white text-center">What is Chantolgy</p>
-        {/* <p className="text-style3-orange text-center">
+        <p className="text-style2-white text-center">What is Chantolgy</p>
+        <p className="text-style3-orange text-center">
           Chantolgy Studios is Reimagining Casual Games
         </p>
         <p className="text-style1-white max-w-[90%] text-center">
@@ -29,11 +29,11 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
           messaging apps like Telegram and LINE. Designed to be quick, positive,
           and meaningful, our games are built with one mission: to make moments
           of mindfulness playful and accessible.
-        </p> */}
+        </p>
       </div>
 
       {/* Carousel Component */}
-      {/* <Carousel /> */}
+      <Carousel />
     </div>
   );
 };
