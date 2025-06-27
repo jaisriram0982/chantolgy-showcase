@@ -90,7 +90,7 @@ export const SectionComingSoon: React.FC<ISectionComingSoon> = ({
         {/* About us */}
         {/* About us */}
         <div
-          id="about-us"
+          id="about"
           className="pt-10 w-full lg:w-[85%] flex flex-col items-center lg:items-start justify-center"
         >
           <div

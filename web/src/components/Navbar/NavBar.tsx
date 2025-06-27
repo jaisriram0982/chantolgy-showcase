@@ -5,22 +5,20 @@ import { useUtilities } from "@/hooks/useUtilities";
 import Link from "next/link";
 import { useState } from "react";
 import { HamburgerButton } from "@/components/HamburgerButton/HamburgerButton";
+import { ContactModal } from "@/components/ContactModal/ContactModal";
 
 const NAVBAR_ITEMS = [
   {
-    name: "About  Chantolgy",
-    navigateToPage: "/about-chantolgy",
-    scrollToId: "#about-chantolgy",
+    name: "About Chantolgy",
+    scrollToId: "about",
   },
   {
     name: "Our Games",
-    navigateToPage: "our-games",
-    scrollToId: "#our-games",
+    scrollToId: "games",
   },
   {
     name: "Contact Us",
-    navigateToPage: "contact-us",
-    scrollToId: "#contact-us",
+    scrollToId: "contact-us-section",
   },
 ];
 
@@ -29,18 +27,27 @@ interface INavBarProps {
 }
 
 export const NavBar: React.FC<INavBarProps> = ({ className }) => {
-  const { isMobile } = useUtilities();
+  const { isMobile, scrollToElementById } = useUtilities();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleNavClick = (item: typeof NAVBAR_ITEMS[0]) => {
+    if (item.name === "Contact Us") {
+      setIsContactModalOpen(true);
+    } else {
+      scrollToElementById(item.scrollToId);
+    }
+  };
 
   const NavLinksDesktop = (
     <div className="flex gap-4 items-center justify-center">
       {NAVBAR_ITEMS.map((item) => (
-        <Link
+        <button
           key={item.name}
-          href={item.navigateToPage}
-          className="text-white hover:text-[#FF6B00] transition-colors duration-300"
+          onClick={() => handleNavClick(item)}
+          className="text-white hover:text-[#FF6B00] transition-colors duration-300 cursor-pointer"
         >
           {item.name}
-        </Link>
+        </button>
       ))}
       <div id="linkedin-icon" className="ml-4 w-6 h-6">
         <Image
@@ -72,15 +79,33 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
         />
       </div>
       {isMobile ? <MobileMenu /> : NavLinksDesktop}
+      
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   );
 };
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const { scrollToElementById } = useUtilities();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleMobileNavClick = (item: typeof NAVBAR_ITEMS[0]) => {
+    if (item.name === "Contact Us") {
+      setIsContactModalOpen(true);
+      toggleMenu();
+    } else {
+      scrollToElementById(item.scrollToId);
+      toggleMenu();
+    }
   };
 
   return (
@@ -141,14 +166,13 @@ const MobileMenu = () => {
 
             <div className="flex flex-col gap-8 items-start flex-1">
               {NAVBAR_ITEMS.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  href={item.navigateToPage}
-                  className="text-xl font-medium text-white hover:text-[#FF6B00] transition-colors duration-300 font-baloo"
-                  onClick={toggleMenu}
+                  onClick={() => handleMobileNavClick(item)}
+                  className="text-xl font-medium text-white hover:text-[#FF6B00] transition-colors duration-300 font-baloo cursor-pointer text-left"
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
 
@@ -164,6 +188,12 @@ const MobileMenu = () => {
               </div>
             </div>
           </div>
+          
+          {/* Contact Modal for Mobile */}
+          <ContactModal 
+            isOpen={isContactModalOpen} 
+            onClose={() => setIsContactModalOpen(false)} 
+          />
         </div>
       )}
     </div>

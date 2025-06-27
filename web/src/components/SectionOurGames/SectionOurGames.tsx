@@ -52,7 +52,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
     <div className={clsx("w-full min-h-screen p-4", className)}>
       {/* SectionOurGames content goes here */}
       <div
-        id="fg-ervwojn"
+        id="games"
         className="w-full h-full flex flex-col items-center justify-start"
       >
         {/* Main texts */}
