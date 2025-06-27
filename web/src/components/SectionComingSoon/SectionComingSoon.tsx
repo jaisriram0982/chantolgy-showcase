@@ -87,6 +87,39 @@ export const SectionComingSoon: React.FC<ISectionComingSoon> = ({
             </div>
           </div>
         </div>
+        {/* About us */}
+        {/* About us */}
+        <div
+          id="about-us"
+          className="pt-10 w-full lg:w-[85%] flex flex-col items-center lg:items-start justify-center"
+        >
+          <div
+            id="text-and-underline-whitle"
+            className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-center gap-x-4"
+          >
+            <p className="text-white text-xl font-bold font-baloo leading-7 text-nowrap">
+              About Chantolgy Studios
+            </p>
+            {/* Underline white */}
+            <div className="mt-2 lg:mt-0 relative w-full mx-auto bg-white h-[2px] rounded-full">
+              <div className="absolute top-0 inset-x-0 w-full h-[8px] rounded-full flex justify-start items-center">
+                <div className="bg-white w-1/4 max-w-[50px] -mt-[6px] h-[6px] rounded-full" />
+              </div>
+            </div>
+          </div>
+          <p
+            id="white-desc"
+            className="pt-4 text-white text-base font-normal font-baloo leading-normal"
+          >
+            Chantolgy Studios is a team of passionate gamers, designers,
+            cultural explorers, developers, and mindfulness enthusiasts creating
+            digital experiences that uplift. We believe in the power of games to
+            promote well-being and create positive experiences. Our mission is
+            to develop engaging and therapeutic mini-games that integrate
+            ancient wisdom with modern technology, making mindfulness accessible
+            to everyone.
+          </p>
+        </div>
       </div>
     </div>
   );
