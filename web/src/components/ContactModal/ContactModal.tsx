@@ -77,12 +77,12 @@ export const ContactModal: React.FC<IContactModal> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-md w-full mx-4 relative">
+    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
+      <div className="bg-[rgba(20,18,23,1)] border border-gray-700 rounded-lg max-w-md w-full mx-4 relative">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -91,16 +91,16 @@ export const ContactModal: React.FC<IContactModal> = ({ isOpen, onClose }) => {
 
         <div className="p-6">
           {/* Header */}
-          <h2 className="text-2xl font-bold text-gray-900 mb-2 font-baloo">
+          <h2 className="text-2xl font-bold text-white mb-2 font-baloo">
             Get in touch
           </h2>
-          <p className="text-gray-600 mb-6 font-baloo">
-            Your contact details and we&apos;ll get back to you shortly.
+          <p className="text-gray-300 mb-6 font-baloo">
+            Write your message and your contact details and we&apos;ll get back to you shortly.
           </p>
 
           {/* Success Message */}
           {isSuccess && (
-            <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+            <div className="mb-4 p-3 bg-green-900/30 border border-green-500 text-green-400 rounded font-baloo">
               Message sent successfully! We&apos;ll get back to you soon.
             </div>
           )}
@@ -118,8 +118,9 @@ export const ContactModal: React.FC<IContactModal> = ({ isOpen, onClose }) => {
                 placeholder="Input your message here"
                 className={clsx(
                   "w-full p-3 border rounded-lg resize-none font-baloo",
+                  "bg-gray-800 text-white placeholder-gray-400",
                   "focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent",
-                  error ? "border-red-500" : "border-gray-300"
+                  error ? "border-red-500" : "border-gray-600"
                 )}
                 rows={5}
                 maxLength={1000}
@@ -129,13 +130,13 @@ export const ContactModal: React.FC<IContactModal> = ({ isOpen, onClose }) => {
               <div className="flex justify-between items-center mt-2 text-sm">
                 <span className={clsx(
                   "font-baloo",
-                  message.length < 5 ? "text-red-500" : "text-gray-500"
+                  message.length < 5 ? "text-red-400" : "text-gray-400"
                 )}>
                   {message.length < 5 ? `${5 - message.length} more characters needed` : ""}
                 </span>
                 <span className={clsx(
                   "font-baloo",
-                  message.length > 950 ? "text-orange-500" : "text-gray-500"
+                  message.length > 950 ? "text-orange-400" : "text-gray-400"
                 )}>
                   {message.length}/1000
                 </span>
@@ -144,7 +145,7 @@ export const ContactModal: React.FC<IContactModal> = ({ isOpen, onClose }) => {
 
             {/* Error Message */}
             {error && (
-              <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded font-baloo">
+              <div className="mb-4 p-3 bg-red-900/30 border border-red-500 text-red-400 rounded font-baloo">
                 {error}
               </div>
             )}
@@ -156,8 +157,8 @@ export const ContactModal: React.FC<IContactModal> = ({ isOpen, onClose }) => {
               className={clsx(
                 "w-full py-3 px-4 rounded-lg font-semibold font-baloo transition-all duration-300",
                 isLoading || message.length < 5 || message.length > 1000
-                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-orange-500 text-white hover:bg-orange-600 transform hover:scale-[1.02]"
+                  ? "bg-gray-700 text-gray-500 cursor-not-allowed"
+                  : "bg-[rgba(238,105,58,1)] text-white hover:bg-orange-600 transform hover:scale-[1.02] shadow-lg"
               )}
             >
               {isLoading ? "Sending..." : "Get in touch"}
