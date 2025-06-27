@@ -1,12 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 import Image from "next/image";
+import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
 
 interface ISectionOurGames {
   className?: string;
 }
 
-const CAROUSEL_ITEMS = [
+const ICONS_CAROUSEL_ITEMS = [
   {
     logo: "/common/linkedin.png",
     title: "Platform-native\n(Telegram, LINE, etc.)",
@@ -20,7 +21,32 @@ const CAROUSEL_ITEMS = [
     title: "Culturally\nRespectful",
   },
 ];
-
+const GAMES_CAROUSEL_ITEMS: CarouselItemConfig[] = [
+  {
+    image: "/sections/our-games/chant-to-relax.jpg",
+    title: "Chant-to-Relax",
+    description:
+      "Find your inner peace with calming chants and soothing visuals.",
+  },
+  {
+    image: "/sections/our-games/rhythm-with-friends.jpg",
+    title: "Rhythm with Friends",
+    description:
+      "Challenge your friends in rhythm-based games with a spiritual twist.",
+  },
+  {
+    image: "/sections/our-games/tap-to-breathe.jpg",
+    title: "Tap-to-Breathe",
+    description:
+      "Synchronize your taps with your breath for a meditative experience.",
+  },
+  {
+    image: "/sections/our-games/daily-mantra.jpg",
+    title: "Daily Mantra Loop",
+    description:
+      "Start your day with a positive mantra, repeated in a calming loop.",
+  },
+];
 export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
   return (
     <div className={clsx("w-full min-h-screen p-4", className)}>
@@ -55,7 +81,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
           id="icons-carousel"
           className="mt-20 w-[80%] grid grid-cols-2 lg:grid-cols-3 items-center justify-start gap-4"
         >
-          {CAROUSEL_ITEMS.map((item) => (
+          {ICONS_CAROUSEL_ITEMS.map((item) => (
             <div
               key={item.title}
               className="flex flex-col items-center justify-start h-full"
@@ -72,6 +98,11 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
               </p>
             </div>
           ))}
+        </div>
+        
+        {/* Games Carousel */}
+        <div className="mt-16 w-[95%]">
+          <Carousel items={GAMES_CAROUSEL_ITEMS} className="justify-center" imageSize={223} />
         </div>
       </div>
     </div>

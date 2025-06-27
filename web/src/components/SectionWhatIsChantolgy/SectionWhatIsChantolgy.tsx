@@ -1,11 +1,35 @@
 import React from "react";
 import clsx from "clsx";
-import { Carousel } from "@/components/Carousel/Carousel";
+import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
 import { TextBlock } from "@/components/TextBlock/TextBlock";
 
 interface ISectionWhatIsChantolgy {
   className?: string;
 }
+
+const carouselItems: CarouselItemConfig[] = [
+  {
+    desktop: "/sections/whatischantolgy/whatis-img1-desktop-v1.png",
+    mobile: "/sections/whatischantolgy/whatis-img1-mobile-v1.png",
+    title: "Rhythm Tap Game",
+    description:
+      "Tap to the rhythm of ancient mantras, with chakra points lighting up in sync with the beats.",
+  },
+  {
+    desktop: "/sections/whatischantolgy/whatis-img2-desktop-v1.png",
+    mobile: "/sections/whatischantolgy/whatis-img2-mobile-v1.png",
+    title: "Breath Sync Game",
+    description:
+      "Synchronize your breath with a calming visual circle, accompanied by soothing tones.",
+  },
+  {
+    desktop: "/sections/whatischantolgy/whatis-img3-desktop-v1.png",
+    mobile: "/sections/whatischantolgy/whatis-img3-mobile-v1.png",
+    title: "Multiplayer Chant Loop",
+    description:
+      "Join friends in a shared chant loop, with avatars in a circle and a glowing mandala at the center.",
+  },
+];
 
 export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
   className,
@@ -26,7 +50,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         classNameLine3="text-left lg:text-center lg:w-[80%]"
         showUnderline={true}
       />
-      <Carousel />
+      <Carousel items={carouselItems} imageSize={300} />
     </div>
   );
 };
