@@ -25,7 +25,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-
+     // Initial states - start invisible and slightly offset
     const ctx = gsap.context(() => {
       gsap.set(
         [
@@ -39,12 +39,13 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
           y: 30,
         }
       );
-
+       // Elegant entrance animation timeline
       const entranceTl = gsap.timeline({
         defaults: { ease: "power3.out" },
         delay: 2.4,
       });
-
+      
+      // Staggered entrance animations
       entranceTl
         .to(titleRef.current, {
           opacity: 1,
@@ -124,7 +125,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         </div>
       </div>
 
-      {/* Music Toggle Button in Bottom Right of Section */}
+      {/* audio toggle btn*/}
       <button
         onClick={toggleMusic}
         title={isPlaying ? "Turn music off" : "Turn music on"}

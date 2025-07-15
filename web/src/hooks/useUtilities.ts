@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useAudio } from "@/hooks/useAudio"; 
+import { useAudio } from "@/hooks/useAudio";
 
 let audioRef: HTMLAudioElement | null = null;
 
