@@ -12,10 +12,12 @@
     "@emailjs/browser": "^4.4.1",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
+    "lucide-react": "^0.525.0",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

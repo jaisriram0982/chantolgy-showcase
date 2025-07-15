@@ -5,13 +5,14 @@ import clsx from "clsx";
 import { useUtilities } from "@/hooks/useUtilities";
 import { gsap } from "gsap";
 import { TypingEffect } from "@/components/TypingEffect/TypingEffect";
+import { Volume2, VolumeX } from "lucide-react";
 
 interface ISectionHero {
   className?: string;
 }
 
 export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
-  const { isMobile } = useUtilities();
+  const { isMobile, toggleMusic, isPlaying } = useUtilities();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const companyRef = useRef<HTMLHeadingElement>(null);
@@ -26,7 +27,6 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Initial states - start invisible and slightly offset
       gsap.set(
         [
           titleRef.current,
@@ -40,13 +40,11 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         }
       );
 
-      // Elegant entrance animation timeline
       const entranceTl = gsap.timeline({
         defaults: { ease: "power3.out" },
-        delay: 2.4, // Start after loader
+        delay: 2.4,
       });
 
-      // Staggered entrance animations
       entranceTl
         .to(titleRef.current, {
           opacity: 1,
@@ -91,7 +89,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
     <div
       ref={sectionRef}
       className={clsx(
-        "w-full min-h-screen bg-cover bg-center bg-no-repeat border-black p-4 flex flex-col items-center",
+        "relative w-full min-h-screen bg-cover bg-center bg-no-repeat border-black p-4 flex flex-col items-center",
         className
       )}
       style={{
@@ -115,16 +113,29 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         <h3 ref={taglineRef} className="text-style1-white mb-8">
           Play. Connect. Chant.
         </h3>
-        
+
         {/* Typing Effect */}
         <div ref={typingRef} className="mt-6">
           <TypingEffect
             className="text-style2-white"
-            startDelay={0} // No delay since it's controlled by GSAP
+            startDelay={0}
             pauseDuration={2500}
           />
         </div>
       </div>
+
+      {/* Music Toggle Button in Bottom Right of Section */}
+      <button
+        onClick={toggleMusic}
+        title={isPlaying ? "Turn music off" : "Turn music on"}
+        className="absolute bottom-6 right-6 z-10 p-3 rounded-full bg-[#141217F2] backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200"
+      >
+        {isPlaying ? (
+          <Volume2 className="w-6 h-6" />
+        ) : (
+          <VolumeX className="w-6 h-6" />
+        )}
+      </button>
     </div>
   );
 };
