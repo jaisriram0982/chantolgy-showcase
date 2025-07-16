@@ -53,7 +53,7 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
           {item.name}
         </button>
       ))}
-      
+
       {/* LinkedIn Icon */}
       <a
         href="https://www.linkedin.com/company/chantolgy-studios"
@@ -155,7 +155,7 @@ const MobileMenu = () => {
           <div className="relative w-full h-screen">
             {/* Background Image */}
             <div
-              className="absolute inset-0 flex items-center justify-center"
+              className="absolute inset-0 flex items-center justify-center -z-10"
               style={{ top: "20%" }}
             >
               <Image
@@ -166,6 +166,7 @@ const MobileMenu = () => {
                 className="w-full h-auto opacity-20 object-contain border"
               />
             </div>
+
             {/* Header with Logo and Close Button */}
             <div className="flex justify-between items-center pt-4 pb-8">
               {/* Logo */}
@@ -212,20 +213,55 @@ const MobileMenu = () => {
               ))}
             </div>
 
-            {/* LinkedIn Logo at Bottom Right */}
-            <div className="absolute bottom-4 right-4">
+            {/* Bottom Icons  */}
+            <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8">
+              {/* LinkedIn Logo at Bottom Right */}
               <a
                 href="https://www.linkedin.com/company/chantolgy-studios"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:opacity-80 transition-opacity duration-300"
               >
-                <div id="linkedin-icon-mobile" className="w-8 h-8">
+                <div id="linkedin-icon-mobile" className="w-9 h-9">
                   <Image
                     src="/common/linkedin.png"
                     alt="linkedin-icon"
-                    width={32}
-                    height={32}
+                    width={36}
+                    height={36}
+                  />
+                </div>
+              </a>
+
+              {/* Telegram Logo at Bottom Right */}
+              <a
+                href="https://t.me/jaisriram_io_community"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-80 transition-opacity duration-300"
+              >
+                <div id="linkedin-icon-mobile" className="w-9 h-9">
+                  <Image
+                    src="/common/telegram.png"
+                    alt="linkedin-icon"
+                    width={36}
+                    height={36}
+                  />
+                </div>
+              </a>
+
+              {/* X Logo at Bottom Right */}
+              <a
+                href="https://x.com/JSR_Coin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-80 transition-opacity duration-300"
+              >
+                <div id="linkedin-icon-mobile" className="w-9 h-9">
+                  <Image
+                    src="/common/x.png"
+                    alt="linkedin-icon"
+                    width={36}
+                    height={36}
                   />
                 </div>
               </a>

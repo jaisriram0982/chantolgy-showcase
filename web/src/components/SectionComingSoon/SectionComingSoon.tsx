@@ -87,7 +87,7 @@ export const SectionComingSoon: React.FC<ISectionComingSoon> = ({
             </div>
           </div>
         </div>
-        {/* About us */}
+        
         {/* About us */}
         <div
           id="about"
