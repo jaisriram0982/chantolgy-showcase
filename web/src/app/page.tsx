@@ -15,28 +15,28 @@ export default function Home() {
   const { playMusic } = useUtilities();
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Attempt to play music when component mounts
-    const handleUserInteraction = () => {
-      playMusic();
-      // Remove event listeners after first interaction
-      document.removeEventListener("click", handleUserInteraction);
-      document.removeEventListener("touchstart", handleUserInteraction);
-      document.removeEventListener("keydown", handleUserInteraction);
-    };
+  // useEffect(() => {
+  //   // Attempt to play music when component mounts
+  //   const handleUserInteraction = () => {
+  //     playMusic();
+  //     // Remove event listeners after first interaction
+  //     document.removeEventListener("click", handleUserInteraction);
+  //     document.removeEventListener("touchstart", handleUserInteraction);
+  //     document.removeEventListener("keydown", handleUserInteraction);
+  //   };
 
-    // Add event listeners for user interaction
-    document.addEventListener("click", handleUserInteraction);
-    document.addEventListener("touchstart", handleUserInteraction);
-    document.addEventListener("keydown", handleUserInteraction);
+  //   // Add event listeners for user interaction
+  //   document.addEventListener("click", handleUserInteraction);
+  //   document.addEventListener("touchstart", handleUserInteraction);
+  //   document.addEventListener("keydown", handleUserInteraction);
 
-    // Cleanup
-    return () => {
-      document.removeEventListener("click", handleUserInteraction);
-      document.removeEventListener("touchstart", handleUserInteraction);
-      document.removeEventListener("keydown", handleUserInteraction);
-    };
-  }, [playMusic]);
+  //   // Cleanup
+  //   return () => {
+  //     document.removeEventListener("click", handleUserInteraction);
+  //     document.removeEventListener("touchstart", handleUserInteraction);
+  //     document.removeEventListener("keydown", handleUserInteraction);
+  //   };
+  // }, [playMusic]);
 
   const handleLoaderComplete = () => {
     setIsLoading(false);
