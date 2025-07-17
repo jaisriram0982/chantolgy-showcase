@@ -215,6 +215,7 @@ const MobileMenu = () => {
 
             {/* Bottom Icons  */}
             <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8">
+              
               {/* LinkedIn Logo at Bottom Right */}
               <a
                 href="https://www.linkedin.com/company/chantolgy-studios"
