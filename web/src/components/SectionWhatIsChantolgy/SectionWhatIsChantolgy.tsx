@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
 import { TextBlock } from "@/components/TextBlock/TextBlock";
+import BackgroundChakra from "@/components/BackgroundChakra/BackgroundChakra";
 
 interface ISectionWhatIsChantolgy {
   className?: string;
@@ -40,8 +41,10 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         "w-full flex flex-col items-center justify-start",
         className
       )}
+      id="what-is-chantology"
     >
-      <div className="w-[90%] flex flex-col items-center justify-start">
+
+      <div className="w-[90%] flex flex-col items-center justify-start z-10">
         <TextBlock
           line1Text="What is Chantolgy?"
           line2Text="Chantolgy Studios is Reimagining Casual Games"
@@ -52,7 +55,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
           showUnderline={true}
         />
       </div>
-      <Carousel items={carouselItems} imageSize={300} />
+      <Carousel items={carouselItems} imageSize={300} className="z-10" />
     </div>
   );
 };
