@@ -10,11 +10,15 @@ import { ContactModal } from "@/components/ContactModal/ContactModal";
 const NAVBAR_ITEMS = [
   {
     name: "About Chantolgy",
-    scrollToId: "about",
+    scrollToId: "what-is-chantology",
   },
   {
     name: "Our Games",
     scrollToId: "games",
+  },
+  {
+    name: "About",
+    scrollToId: "about",
   },
   {
     name: "Contact Us",
@@ -30,7 +34,7 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
   const { isMobile, scrollToElementById } = useUtilities();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  const handleNavClick = (item: typeof NAVBAR_ITEMS[0]) => {
+  const handleNavClick = (item: (typeof NAVBAR_ITEMS)[0]) => {
     if (item.name === "Contact Us") {
       setIsContactModalOpen(true);
     } else {
@@ -49,9 +53,11 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
           {item.name}
         </button>
       ))}
-      <a 
-        href="https://www.linkedin.com/company/chantolgy-studios" 
-        target="_blank" 
+
+      {/* LinkedIn Icon */}
+      <a
+        href="https://www.linkedin.com/company/chantolgy-studios"
+        target="_blank"
         rel="noopener noreferrer"
         className="ml-4 w-6 h-6 hover:opacity-80 transition-opacity duration-300"
       >
@@ -62,6 +68,33 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
           height={24}
         />
       </a>
+
+      {/* Telegram Icon */}
+      {/* <a
+        href="https://t.me/jaisriram_io_community"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="ml-4 w-6 h-6 hover:opacity-80 transition-opacity duration-300"
+      >
+        <Image
+          src="/common/telegram.png"
+          alt="linkedin-icon"
+          width={24}
+          height={24}
+        />
+      </a> */}
+
+      {/* X Icon  */}
+      {/* <a
+        href="https://x.com/JSR_Coin"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="ml-4 w-6 h-6 hover:opacity-80 transition-opacity duration-300"
+      >
+        <Image src="/common/x.png" alt="linkedin-icon" width={24} height={24} />
+      </a> */}
+
+
     </div>
   );
 
@@ -84,11 +117,11 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
         />
       </div>
       {isMobile ? <MobileMenu /> : NavLinksDesktop}
-      
+
       {/* Contact Modal */}
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </div>
   );
@@ -103,7 +136,7 @@ const MobileMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleMobileNavClick = (item: typeof NAVBAR_ITEMS[0]) => {
+  const handleMobileNavClick = (item: (typeof NAVBAR_ITEMS)[0]) => {
     if (item.name === "Contact Us") {
       setIsContactModalOpen(true);
       toggleMenu();
@@ -124,7 +157,7 @@ const MobileMenu = () => {
           <div className="relative w-full h-screen">
             {/* Background Image */}
             <div
-              className="absolute inset-0 flex items-center justify-center"
+              className="absolute inset-0 flex items-center justify-center -z-10"
               style={{ top: "20%" }}
             >
               <Image
@@ -135,6 +168,7 @@ const MobileMenu = () => {
                 className="w-full h-auto opacity-20 object-contain border"
               />
             </div>
+
             {/* Header with Logo and Close Button */}
             <div className="flex justify-between items-center pt-4 pb-8">
               {/* Logo */}
@@ -181,30 +215,65 @@ const MobileMenu = () => {
               ))}
             </div>
 
-            {/* LinkedIn Logo at Bottom Right */}
-            <div className="absolute bottom-4 right-4">
-              <a 
-                href="https://www.linkedin.com/company/chantolgy-studios" 
-                target="_blank" 
+            {/* Bottom Icons  */}
+            <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8">
+              {/* LinkedIn Logo at Bottom Right */}
+              <a
+                href="https://www.linkedin.com/company/chantolgy-studios"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:opacity-80 transition-opacity duration-300"
               >
-                <div id="linkedin-icon-mobile" className="w-8 h-8">
+                <div id="linkedin-icon-mobile" className="w-9 h-9">
                   <Image
                     src="/common/linkedin.png"
                     alt="linkedin-icon"
-                    width={32}
-                    height={32}
+                    width={36}
+                    height={36}
                   />
                 </div>
               </a>
+
+              {/* Telegram Logo at Bottom Right */}
+              {/* <a
+                href="https://t.me/jaisriram_io_community"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-80 transition-opacity duration-300"
+              >
+                <div id="linkedin-icon-mobile" className="w-9 h-9">
+                  <Image
+                    src="/common/telegram.png"
+                    alt="linkedin-icon"
+                    width={36}
+                    height={36}
+                  />
+                </div>
+              </a> */}
+
+              {/* X Logo at Bottom Right */}
+              {/* <a
+                href="https://x.com/JSR_Coin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-80 transition-opacity duration-300"
+              >
+                <div id="linkedin-icon-mobile" className="w-9 h-9">
+                  <Image
+                    src="/common/x.png"
+                    alt="linkedin-icon"
+                    width={36}
+                    height={36}
+                  />
+                </div>
+              </a> */}
             </div>
           </div>
-          
+
           {/* Contact Modal for Mobile */}
-          <ContactModal 
-            isOpen={isContactModalOpen} 
-            onClose={() => setIsContactModalOpen(false)} 
+          <ContactModal
+            isOpen={isContactModalOpen}
+            onClose={() => setIsContactModalOpen(false)}
           />
         </div>
       )}
