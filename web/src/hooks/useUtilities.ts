@@ -29,6 +29,8 @@ export const useUtilities = () => {
       audioRef = new Audio("/bkg_chantolgy-v1.mp3");
       audioRef.loop = true;
       audioRef.volume = 0.3; // Set volume to 30%
+      audioRef.preload = "auto"; // Preload the audio
+      audioRef.autoplay = true; // Do autoplay
 
       // Add event listeners for audio
       audioRef.addEventListener("play", () => setIsPlaying(true));
