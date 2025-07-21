@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-baloo: var(--font-baloo-2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom text styles */
+.text-style1-white {
+  @apply text-white  text-base font-normal leading-6;
+  font-family: var(--font-baloo-2);
+  font-feature-settings: "dlig" on;
+}
+
+.text-style2-white {
+  @apply text-white text-xl font-medium leading-7;
+  font-family: var(--font-baloo-2);
+  font-feature-settings: "dlig" on;
+}
+
+.text-style3-orange {
+  @apply text-3xl lg:text-4xl font-normal lg:leading-7;
+  color: #EE693A;
+  font-family: var(--font-elmessiri);
+  font-feature-settings: "dlig" on;
+}
+
+.text-heading-main {
+  @apply text-white font-bold leading-tight text-[48px];
+  font-family: var(--font-elmessiri);
+  font-feature-settings: "dlig" on;
+}
+
+.text-tagline {
+  @apply text-white text-2xl font-semibold leading-relaxed md:text-3xl md:font-semibold;
+  font-family: var(--font-baloo-2);
+}
+
+.text-carousel-title {
+  @apply text-white text-base font-semibold leading-6;
+  font-family: var(--font-baloo-2);
+}
+
+.text-carousel-desc {
+  @apply text-sm font-normal;
+  color: #A6A3B2;
+  font-family: var(--font-baloo-2);
+  font-feature-settings: "dlig" on;
+  line-height: 21px;
+}
+
+.text-feature-description {
+  color: #A6A3B2;
+  font-feature-settings: "dlig" on;
+  font-family: var(--font-baloo-2);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
