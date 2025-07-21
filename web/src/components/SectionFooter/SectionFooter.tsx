@@ -22,10 +22,10 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
       case "contact":
         setIsContactModalOpen(true);
         break;
-      case "careers":
-        // You can add careers section navigation here when available
-        console.log("Careers section - to be implemented");
-        break;
+      // case "careers":
+      //   // You can add careers section navigation here when available
+      //   console.log("Careers section - to be implemented");
+      //   break;
       default:
         break;
     }
@@ -48,12 +48,12 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
           >
             Contact
           </button>
-          <button 
+          {/* <button 
             onClick={() => handleNavigation('careers')}
             className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
           >
             Careers
-          </button>
+          </button> */}
         </div>
 
         {/* Second Row - LinkedIn Logo */}
@@ -74,7 +74,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
           </a>
 
           {/* Telegram Logo at Bottom Right */}
-          <a
+          {/* <a
             href="https://t.me/jaisriram_io_community"
             target="_blank"
             rel="noopener noreferrer"
@@ -88,10 +88,10 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
                 height={36}
               />
             </div>
-          </a>
+          </a> */}
 
           {/* X Logo at Bottom Right */}
-          <a
+          {/* <a
             href="https://x.com/JSR_Coin"
             target="_blank"
             rel="noopener noreferrer"
@@ -105,7 +105,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
                 height={36}
               />
             </div>
-          </a>
+          </a> */}
         </div>
 
         {/* Third Row - Copyright */}

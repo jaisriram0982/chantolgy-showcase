@@ -12,7 +12,7 @@ interface ISectionHero {
 }
 
 export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
-  const { isMobile, toggleMusic, isPlaying } = useUtilities();
+  const { isMobile, toggleMusic, isPlaying, userInteraction } = useUtilities();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const companyRef = useRef<HTMLHeadingElement>(null);
@@ -25,7 +25,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-    // Initial states - start invisible and slightly offset
+
     const ctx = gsap.context(() => {
       gsap.set(
         [
@@ -39,46 +39,17 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
           y: 30,
         }
       );
-      // Elegant entrance animation timeline
+
       const entranceTl = gsap.timeline({
         defaults: { ease: "power3.out" },
         delay: 2.4,
       });
 
-      // Staggered entrance animations
       entranceTl
-        .to(titleRef.current, {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-        })
-        .to(
-          companyRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.0,
-          },
-          "-=0.6"
-        )
-        .to(
-          taglineRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.0,
-          },
-          "-=0.4"
-        )
-        .to(
-          typingRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-          },
-          "-=0.2"
-        );
+        .to(titleRef.current, { opacity: 1, y: 0, duration: 1.2 })
+        .to(companyRef.current, { opacity: 1, y: 0, duration: 1.0 }, "-=0.6")
+        .to(taglineRef.current, { opacity: 1, y: 0, duration: 1.0 }, "-=0.4")
+        .to(typingRef.current, { opacity: 1, y: 0, duration: 0.8 }, "-=0.2");
     }, sectionRef);
 
     return () => {
@@ -125,12 +96,19 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         </div>
       </div>
 
-      {/* audio toggle btn*/}
+      {/* audio toggle btn */}
       <button
-        onClick={toggleMusic}
+        onClick={() => {
+          if (userInteraction) {
+            toggleMusic();
+          }
+        }}
         title={isPlaying ? "Turn music off" : "Turn music on"}
         className={`absolute bottom-6 right-6 z-10 p-3 rounded-full 
-    ${isPlaying ? "bg-[#4D425C]" : "bg-[#141217F2]"} backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200`}
+          ${
+            isPlaying ? "bg-[#4D425C]" : "bg-[#141217F2]"
+          } 
+          backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200`}
       >
         {isPlaying ? (
           <Volume2 className="w-6 h-6" />

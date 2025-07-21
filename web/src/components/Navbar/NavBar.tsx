@@ -70,7 +70,7 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
       </a>
 
       {/* Telegram Icon */}
-      <a
+      {/* <a
         href="https://t.me/jaisriram_io_community"
         target="_blank"
         rel="noopener noreferrer"
@@ -82,17 +82,19 @@ export const NavBar: React.FC<INavBarProps> = ({ className }) => {
           width={24}
           height={24}
         />
-      </a>
+      </a> */}
 
       {/* X Icon  */}
-      <a
+      {/* <a
         href="https://x.com/JSR_Coin"
         target="_blank"
         rel="noopener noreferrer"
         className="ml-4 w-6 h-6 hover:opacity-80 transition-opacity duration-300"
       >
         <Image src="/common/x.png" alt="linkedin-icon" width={24} height={24} />
-      </a>
+      </a> */}
+
+
     </div>
   );
 
@@ -215,7 +217,6 @@ const MobileMenu = () => {
 
             {/* Bottom Icons  */}
             <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8">
-              
               {/* LinkedIn Logo at Bottom Right */}
               <a
                 href="https://www.linkedin.com/company/chantolgy-studios"
@@ -234,7 +235,7 @@ const MobileMenu = () => {
               </a>
 
               {/* Telegram Logo at Bottom Right */}
-              <a
+              {/* <a
                 href="https://t.me/jaisriram_io_community"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -248,10 +249,10 @@ const MobileMenu = () => {
                     height={36}
                   />
                 </div>
-              </a>
+              </a> */}
 
               {/* X Logo at Bottom Right */}
-              <a
+              {/* <a
                 href="https://x.com/JSR_Coin"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -265,7 +266,7 @@ const MobileMenu = () => {
                     height={36}
                   />
                 </div>
-              </a>
+              </a> */}
             </div>
           </div>
 
