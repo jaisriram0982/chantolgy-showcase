@@ -3,6 +3,7 @@ import { useAudio } from "@/hooks/useAudio";
 
 export const useUtilities = () => {
   const [isMobile, setIsMobile] = useState(false);
+  //audio hook
   const { isPlaying, toggleMusic, userInteraction } = useAudio();
 
   useEffect(() => {

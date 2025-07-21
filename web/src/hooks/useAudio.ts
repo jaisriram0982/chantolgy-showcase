@@ -63,6 +63,6 @@ export const useAudio = () => {
   return {
     isPlaying,
     toggleMusic,
-    userInteraction,
+    userInteraction
   };
 };

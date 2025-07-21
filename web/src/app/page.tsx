@@ -11,6 +11,7 @@ import { Loader } from "@/components/Loader/Loader";
 import { useState } from "react";
 
 export default function Home() {
+  // State to manage loading
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoaderComplete = () => {

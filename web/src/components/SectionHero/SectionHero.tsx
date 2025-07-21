@@ -96,7 +96,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
         </div>
       </div>
 
-      {/* audio toggle btn */}
+      {/* audio toggle button */}
       <button
         onClick={() => {
           if (userInteraction) {
