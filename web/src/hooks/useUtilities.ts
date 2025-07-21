@@ -81,7 +81,6 @@ export const useUtilities = () => {
   const playMusic = async () => {
     if (audioRef && audioRef.paused) {
       try {
-        // Modern browsers require user interaction before playing audio
         await audioRef.play();
       } catch (error) {
         console.log("Could not play background music:", error);

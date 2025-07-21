@@ -25,7 +25,7 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-     // Initial states - start invisible and slightly offset
+    // Initial states - start invisible and slightly offset
     const ctx = gsap.context(() => {
       gsap.set(
         [
@@ -39,12 +39,12 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
           y: 30,
         }
       );
-       // Elegant entrance animation timeline
+      // Elegant entrance animation timeline
       const entranceTl = gsap.timeline({
         defaults: { ease: "power3.out" },
         delay: 2.4,
       });
-      
+
       // Staggered entrance animations
       entranceTl
         .to(titleRef.current, {
@@ -129,7 +129,8 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
       <button
         onClick={toggleMusic}
         title={isPlaying ? "Turn music off" : "Turn music on"}
-        className="absolute bottom-6 right-6 z-10 p-3 rounded-full bg-[#141217F2] backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200"
+        className={`absolute bottom-6 right-6 z-10 p-3 rounded-full 
+    ${isPlaying ? "bg-[#4D425C]" : "bg-[#141217F2]"} backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200`}
       >
         {isPlaying ? (
           <Volume2 className="w-6 h-6" />
