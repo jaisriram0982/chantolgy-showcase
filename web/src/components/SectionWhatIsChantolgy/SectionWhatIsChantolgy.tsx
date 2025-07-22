@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
 import { TextBlock } from "@/components/TextBlock/TextBlock";
+import Image from "next/image";
 
 interface ISectionWhatIsChantolgy {
   className?: string;
@@ -41,7 +42,9 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         className
       )}
     >
-      <div className="w-[90%] flex flex-col items-center justify-start">
+  
+
+      <div className="w-[90%] flex flex-col items-center justify-start z-10">
         <TextBlock
           line1Text="What is Chantolgy?"
           line2Text="Chantolgy Studios is Reimagining Casual Games"
