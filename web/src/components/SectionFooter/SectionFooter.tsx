@@ -88,15 +88,6 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
         onClose={() => setIsContactModalOpen(false)}
       />
 
-      {/* <div className="absolute -bottom-25 -left-25 w-40 h-40 sm:w-60 sm:h-60 md:w-70 md:h-70 lg:w-80 lg:h-80 ">
-        <Image
-          src="/common/mandela.png"
-          alt="mandela"
-          fill
-          className="object-contain"
-        />
-      </div> */}
-
       {/* bottom chakra image left side  */}
       <Image
         src="/common/mandela.png"
