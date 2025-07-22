@@ -104,11 +104,10 @@ export const SectionHero: React.FC<ISectionHero> = ({ className }) => {
           }
         }}
         title={isPlaying ? "Turn music off" : "Turn music on"}
-        className={`absolute bottom-6 right-6 z-10 p-3 rounded-full 
-          ${
-            isPlaying ? "bg-[#4D425C]" : "bg-[#141217F2]"
-          } 
-          backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200`}
+        className={clsx(
+          "absolute bottom-6 right-6 z-10 p-3 rounded-full backdrop-blur-md text-[#A6A3B2] hover:bg-[#4D425C] transition duration-200",
+          isPlaying ? "bg-[#4D425C]" : "bg-[#141217F2]"
+        )}
       >
         {isPlaying ? (
           <Volume2 className="w-6 h-6" />
