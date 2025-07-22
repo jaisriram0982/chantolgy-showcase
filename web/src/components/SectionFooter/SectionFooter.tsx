@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import Image from 'next/image';
-import { useUtilities } from '@/hooks/useUtilities';
-import { ContactModal } from '@/components/ContactModal/ContactModal';
+import React, { useState } from "react";
+import clsx from "clsx";
+import Image from "next/image";
+import { useUtilities } from "@/hooks/useUtilities";
+import { ContactModal } from "@/components/ContactModal/ContactModal";
 
 interface ISectionFooter {
   className?: string;
@@ -16,15 +16,15 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
 
   const handleNavigation = (type: string) => {
     switch (type) {
-      case 'about':
-        scrollToElementById('why-chanting-in-games');
+      case "about":
+        scrollToElementById("why-chanting-in-games");
         break;
-      case 'contact':
+      case "contact":
         setIsContactModalOpen(true);
         break;
-      case 'careers':
+      case "careers":
         // You can add careers section navigation here when available
-        console.log('Careers section - to be implemented');
+        console.log("Careers section - to be implemented");
         break;
       default:
         break;
@@ -32,18 +32,18 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
   };
 
   return (
-    <div className={clsx('w-full p-4', className)}>
+    <div className={clsx("w-full p-4", className)}>
       <div className="flex flex-col items-center justify-center space-y-8 py-8">
         {/* First Row - Navigation Links */}
         <div className="flex flex-row space-x-8">
-          <button 
-            onClick={() => handleNavigation('about')}
+          <button
+            onClick={() => handleNavigation("about")}
             className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
           >
             About
           </button>
-          <button 
-            onClick={() => handleNavigation('contact')}
+          <button
+            onClick={() => handleNavigation("contact")}
             className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
           >
             Contact
@@ -58,9 +58,9 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
 
         {/* Second Row - LinkedIn Logo */}
         <div className="flex justify-center">
-          <a 
-            href="https://www.linkedin.com/company/chantolgy-studios" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/company/chantolgy-studios"
+            target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity duration-300"
           >
@@ -75,19 +75,56 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
         </div>
 
         {/* Third Row - Copyright */}
-        <div className="flex justify-center">
+        <div className="flex justify-center z-10">
           <p className="text-zinc-400 text-sm font-normal font-baloo leading-tight text-center">
-            Chantolgy Studios © {currentYear}
+             © {currentYear} Chantolgy Studios. All rights reserved.
           </p>
         </div>
       </div>
-      
+
       {/* Contact Modal */}
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
+
+      {/* <div className="absolute -bottom-25 -left-25 w-40 h-40 sm:w-60 sm:h-60 md:w-70 md:h-70 lg:w-80 lg:h-80 ">
+        <Image
+          src="/common/mandela.png"
+          alt="mandela"
+          fill
+          className="object-contain"
+        />
+      </div> */}
+
+      {/* bottom chakra image left side  */}
+      <Image
+        src="/common/mandela.png"
+        alt="mandela"
+        width={250}
+        height={250}
+        className="
+                     absolute -bottom-20 -left-20 
+                     w-45 h-45                          /* default (mobile) */
+                     md:w-[200px] md:h-[200px]          /* medium screens */
+                     lg:w-[250px] lg:h-[250px]          /* large screens */ 
+                      "
+      />
+      
+      {/* bottom chakra image right side  */}
+      <Image
+        src="/common/mandela.png"
+        alt="mandela"
+        width={250}
+        height={250}
+        className="
+                     absolute -bottom-20 -right-20 
+                     w-45 h-45                          /* default (mobile) */
+                     md:w-[200px] md:h-[200px]          /* medium screens */
+                     lg:w-[250px] lg:h-[250px]          /* large screens */ 
+                      "
+      />
+
     </div>
   );
 };
-
