@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
+import { useUtilities } from "@/hooks/useUtilities";
 
 interface ISectionOurGames {
   className?: string;
@@ -48,12 +49,33 @@ const GAMES_CAROUSEL_ITEMS: CarouselItemConfig[] = [
   },
 ];
 export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
+  const { isMobile } = useUtilities();
   return (
     <div className={clsx("w-full min-h-screen p-4", className)}>
+      {/* {!isMobile && (
+        <Image
+          src="/common/mandela.png"
+          alt="Chakra"
+          width={300}
+          height={300}
+          className="absolute z-0 -ml-[11vw] mt-[5vh]"
+        />
+      )}
+
+      {!isMobile && (
+        <Image
+          src="/common/mandela.png"
+          alt="Chakra"
+          width={250}
+          height={250}
+          className="absolute z-0 ml-[90vw] mt-[30vh]"
+        />
+      )} */}
+
       {/* SectionOurGames content goes here */}
       <div
         id="games"
-        className="w-full h-full flex flex-col items-center justify-start"
+        className="w-full h-full flex flex-col items-center justify-start z-10"
       >
         {/* Main texts */}
         <div
@@ -95,9 +117,9 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
                 alt={item.title}
                 width={30}
                 height={30}
-                className="mb-4"
+                className="mb-4 z-10"
               />
-              <p className="text-feature-description text-center whitespace-pre">
+              <p className="text-feature-description text-center whitespace-pre z-10">
                 {item.title}
               </p>
             </div>
@@ -105,7 +127,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
         </div>
 
         {/* Games Carousel */}
-        <div className="mt-16 w-full lg:w-[80%] ">
+        <div className="mt-16 w-full lg:w-[80%] z-10 ">
           <Carousel items={GAMES_CAROUSEL_ITEMS} imageSize={223} />
         </div>
       </div>

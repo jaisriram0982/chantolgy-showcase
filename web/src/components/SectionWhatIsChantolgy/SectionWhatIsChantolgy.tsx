@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
 import { TextBlock } from "@/components/TextBlock/TextBlock";
 import Image from "next/image";
+import { useUtilities } from "@/hooks/useUtilities";
 
 interface ISectionWhatIsChantolgy {
   className?: string;
@@ -35,6 +36,7 @@ const carouselItems: CarouselItemConfig[] = [
 export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
   className,
 }) => {
+  const { isMobile } = useUtilities();
   return (
     <div
       className={clsx(
@@ -42,7 +44,25 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         className
       )}
     >
-  
+      {!isMobile && (
+        <Image
+          src="/common/mandela.png"
+          alt="Chakra"
+          width={300}
+          height={300}
+          className="absolute z-0 mr-[100vw] mt-[50vh]"
+        />
+      )}
+
+      {!isMobile && (
+        <Image
+          src="/common/mandela.png"
+          alt="Chakra"
+          width={250}
+          height={250}
+          className="absolute z-0 ml-[100vw] mt-[10vh]"
+        />
+      )}
 
       <div className="w-[90%] flex flex-col items-center justify-start z-10">
         <TextBlock
@@ -55,7 +75,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
           showUnderline={true}
         />
       </div>
-      <Carousel items={carouselItems} imageSize={300} />
+      <Carousel items={carouselItems} imageSize={300} className="z-10" />
     </div>
   );
 };
