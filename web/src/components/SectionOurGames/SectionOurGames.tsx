@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import { Carousel, CarouselItemConfig } from "@/components/Carousel/Carousel";
+import { useUtilities } from "@/hooks/useUtilities";
 
 interface ISectionOurGames {
   className?: string;
@@ -48,6 +49,7 @@ const GAMES_CAROUSEL_ITEMS: CarouselItemConfig[] = [
   },
 ];
 export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
+  const { isMobile } = useUtilities();
   return (
     <div className={clsx("w-full min-h-screen p-4", className)}>
       {/* SectionOurGames content goes here */}
@@ -55,6 +57,25 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
         id="games"
         className="w-full h-full flex flex-col items-center justify-start"
       >
+        {!isMobile && (
+          <Image
+            src="/common/mandela.png"
+            alt="Chakra"
+            width={300}
+            height={300}
+            className="absolute mr-[100vw] mt-[10vh] "
+          />
+        )}
+
+        {!isMobile && (
+          <Image
+            src="/common/mandela.png"
+            alt="Chakra"
+            width={200}
+            height={200}
+            className="absolute ml-[100vw] mt-[50vh] "
+          />
+        )}
         {/* Main texts */}
         <div
           id="main-texts"
@@ -105,7 +126,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
         </div>
 
         {/* Games Carousel */}
-        <div className="mt-16 w-full lg:w-[80%] ">
+        <div className="mt-16 w-full lg:w-[80%]">
           <Carousel items={GAMES_CAROUSEL_ITEMS} imageSize={223} />
         </div>
       </div>
