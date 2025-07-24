@@ -22,10 +22,6 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
       case "contact":
         setIsContactModalOpen(true);
         break;
-      case "careers":
-        // You can add careers section navigation here when available
-        console.log("Careers section - to be implemented");
-        break;
       default:
         break;
     }
@@ -48,16 +44,10 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
           >
             Contact
           </button>
-          {/* <button 
-            onClick={() => handleNavigation('careers')}
-            className="text-zinc-400 text-base font-normal font-baloo leading-tight hover:text-white transition-colors duration-300 cursor-pointer"
-          >
-            Careers
-          </button> */}
         </div>
 
         {/* Second Row - LinkedIn Logo */}
-        <div className="flex justify-center">
+        <div className=" left-0 right-0 flex justify-center items-center gap-8">
           <a
             href="https://www.linkedin.com/company/chantolgy-studios"
             target="_blank"

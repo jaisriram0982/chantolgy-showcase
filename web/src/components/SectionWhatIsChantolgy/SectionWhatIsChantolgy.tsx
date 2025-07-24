@@ -43,6 +43,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         "w-full flex flex-col items-center justify-start",
         className
       )}
+      id="what-is-chantology"
     >
       {!isMobile && (
         <Image
