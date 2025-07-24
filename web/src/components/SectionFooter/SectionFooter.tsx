@@ -22,10 +22,6 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
       case "contact":
         setIsContactModalOpen(true);
         break;
-      // case "careers":
-      //   // You can add careers section navigation here when available
-      //   console.log("Careers section - to be implemented");
-      //   break;
       default:
         break;
     }
@@ -71,7 +67,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
         {/* Third Row - Copyright */}
         <div className="flex justify-center">
           <p className="text-zinc-400 text-sm font-normal font-baloo leading-tight text-center">
-            Chantolgy Studios © {currentYear}
+             © {currentYear} Chantolgy Studios. All rights reserved.
           </p>
         </div>
       </div>
@@ -81,6 +77,35 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
       />
+
+      {/* bottom chakra image left side  */}
+      <Image
+        src="/common/mandela.png"
+        alt="mandela"
+        width={250}
+        height={250}
+        className="
+                     absolute -bottom-20 -left-20 
+                     w-45 h-45                          /* default (mobile) */
+                     md:w-[200px] md:h-[200px]          /* medium screens */
+                     lg:w-[250px] lg:h-[250px]          /* large screens */ 
+                      "
+      />
+      
+      {/* bottom chakra image right side  */}
+      <Image
+        src="/common/mandela.png"
+        alt="mandela"
+        width={250}
+        height={250}
+        className="
+                     absolute -bottom-20 -right-20 
+                     w-45 h-45                          /* default (mobile) */
+                     md:w-[200px] md:h-[200px]          /* medium screens */
+                     lg:w-[250px] lg:h-[250px]          /* large screens */ 
+                      "
+      />
+
     </div>
   );
 };

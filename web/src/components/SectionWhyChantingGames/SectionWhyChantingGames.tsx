@@ -24,21 +24,24 @@ export const SectionWhyChantingGames: React.FC<ISectionWhyChantingGames> = ({
     >
       <div
         id="layer-foreground"
-        className="w-full lg:w-[80%] flex flex-col items-center justify-between p-4 relative"
+        className="w-full lg:w-[80%] flex flex-col items-center justify-between p-4 relative "
         style={{
           backgroundImage: `url('/sections/why-chanting-in-games/whychantingingames-desktop-bkg.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: isMobile ? "80% center" : "center left",
           backgroundRepeat: "no-repeat",
+          backgroundBlendMode: "multiply",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       >
         {/* Black overlay mask for mobile only */}
         {isMobile && (
-          <div 
+          <div
             className="absolute inset-0 bg-black/25 pointer-events-none"
             style={{ zIndex: 1 }}
           />
         )}
+        
         <div
           id="main-texts"
           className="lg:my-40 mb-52 max-w-[410px] flex flex-col items-start justify-center"
