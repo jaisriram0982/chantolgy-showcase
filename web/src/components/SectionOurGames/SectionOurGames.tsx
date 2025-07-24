@@ -52,35 +52,34 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
   const { isMobile } = useUtilities();
   return (
     <div className={clsx("w-full min-h-screen p-4", className)}>
-      {/* {!isMobile && (
-        <Image
-          src="/common/mandela.png"
-          alt="Chakra"
-          width={300}
-          height={300}
-          className="absolute z-0 -ml-[11vw] mt-[5vh]"
-        />
-      )}
-
-      {!isMobile && (
-        <Image
-          src="/common/mandela.png"
-          alt="Chakra"
-          width={250}
-          height={250}
-          className="absolute z-0 ml-[90vw] mt-[30vh]"
-        />
-      )} */}
-
       {/* SectionOurGames content goes here */}
       <div
         id="games"
         className="w-full h-full flex flex-col items-center justify-start z-10"
       >
+        {!isMobile && (
+          <Image
+            src="/common/mandela.png"
+            alt="Chakra"
+            width={300}
+            height={300}
+            className="absolute z-0 mr-[100vw] mt-[10vh] "
+          />
+        )}
+
+        {!isMobile && (
+          <Image
+            src="/common/mandela.png"
+            alt="Chakra"
+            width={200}
+            height={200}
+            className="absolute z-0 ml-[100vw] mt-[50vh] "
+          />
+        )}
         {/* Main texts */}
         <div
           id="main-texts"
-          className="mb-4 flex flex-col items-start justify-center"
+          className="mb-4 flex flex-col items-start justify-center z-10"
         >
           <p className="font-baloo text-[28px] font-[500] leading-[28px] w-full text-center">
             Our Games

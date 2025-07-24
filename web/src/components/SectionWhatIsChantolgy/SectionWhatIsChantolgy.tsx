@@ -50,7 +50,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
           alt="Chakra"
           width={300}
           height={300}
-          className="absolute z-0 mr-[100vw] mt-[50vh]"
+          className="absolute z-0 mr-[100vw] mt-[50vh] "
         />
       )}
 
@@ -58,9 +58,9 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
         <Image
           src="/common/mandela.png"
           alt="Chakra"
-          width={250}
-          height={250}
-          className="absolute z-0 ml-[100vw] mt-[10vh]"
+          width={200}
+          height={200}
+          className="absolute z-0 ml-[100vw] mt-[10vh] "
         />
       )}
 
