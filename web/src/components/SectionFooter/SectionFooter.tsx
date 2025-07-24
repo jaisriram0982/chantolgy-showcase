@@ -75,7 +75,7 @@ export const SectionFooter: React.FC<ISectionFooter> = ({ className }) => {
         </div>
 
         {/* Third Row - Copyright */}
-        <div className="flex justify-center z-10">
+        <div className="flex justify-center">
           <p className="text-zinc-400 text-sm font-normal font-baloo leading-tight text-center">
              © {currentYear} Chantolgy Studios. All rights reserved.
           </p>

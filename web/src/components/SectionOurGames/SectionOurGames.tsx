@@ -55,7 +55,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
       {/* SectionOurGames content goes here */}
       <div
         id="games"
-        className="w-full h-full flex flex-col items-center justify-start z-10"
+        className="w-full h-full flex flex-col items-center justify-start"
       >
         {!isMobile && (
           <Image
@@ -63,7 +63,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
             alt="Chakra"
             width={300}
             height={300}
-            className="absolute z-0 mr-[100vw] mt-[10vh] "
+            className="absolute mr-[100vw] mt-[10vh] "
           />
         )}
 
@@ -73,13 +73,13 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
             alt="Chakra"
             width={200}
             height={200}
-            className="absolute z-0 ml-[100vw] mt-[50vh] "
+            className="absolute ml-[100vw] mt-[50vh] "
           />
         )}
         {/* Main texts */}
         <div
           id="main-texts"
-          className="mb-4 flex flex-col items-start justify-center z-10"
+          className="mb-4 flex flex-col items-start justify-center"
         >
           <p className="font-baloo text-[28px] font-[500] leading-[28px] w-full text-center">
             Our Games
@@ -116,9 +116,9 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
                 alt={item.title}
                 width={30}
                 height={30}
-                className="mb-4 z-10"
+                className="mb-4"
               />
-              <p className="text-feature-description text-center whitespace-pre z-10">
+              <p className="text-feature-description text-center whitespace-pre">
                 {item.title}
               </p>
             </div>
@@ -126,7 +126,7 @@ export const SectionOurGames: React.FC<ISectionOurGames> = ({ className }) => {
         </div>
 
         {/* Games Carousel */}
-        <div className="mt-16 w-full lg:w-[80%] z-10 ">
+        <div className="mt-16 w-full lg:w-[80%]">
           <Carousel items={GAMES_CAROUSEL_ITEMS} imageSize={223} />
         </div>
       </div>
