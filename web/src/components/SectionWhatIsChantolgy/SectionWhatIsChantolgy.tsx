@@ -43,7 +43,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
       id="what-is-chantology"
     >
 
-      <div className="w-[90%] flex flex-col items-center justify-start z-10">
+      <div className="w-[90%] flex flex-col items-center justify-start">
         <TextBlock
           line1Text="What is Chantolgy?"
           line2Text="Chantolgy Studios is Reimagining Casual Games"
@@ -54,7 +54,7 @@ export const SectionWhatIsChantolgy: React.FC<ISectionWhatIsChantolgy> = ({
           showUnderline={true}
         />
       </div>
-      <Carousel items={carouselItems} imageSize={300} className="z-10" />
+      <Carousel items={carouselItems} imageSize={300} />
     </div>
   );
 };
